@@ -1,0 +1,16 @@
+<div>
+
+  <div class="d-flex bg-secondary p-3 justify-content-end">
+    <a routerLink="/projects" class="text-lg nav-link p-2 rounded mx-1 text-white"
+       routerLinkActive="bg-primary"><h4 class="font-weight-light">Projects</h4></a>
+    <a routerLink="/gitlab" class="text-lg nav-link p-2 rounded mx-1 text-white"
+       routerLinkActive="bg-primary"><h4 class="font-weight-light">Gitlab</h4></a>
+  </div>
+
+
+  <div class="bg-light vw-100 vh-100 pt-4">
+    <div class="container shadow-sm bg-white p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

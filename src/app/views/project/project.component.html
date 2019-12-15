@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+  <label>url</label>
+  <input type="text" formControlName="url">
+  <label>username</label>
+  <input type="text" formControlName="username">
+  <label>Token</label>
+  <input type="text" formControlName="token">
+</form>
+<button (click)="sendRemoteRepoInfo()" [disabled]="form.invalid">Send</button>
+
+<ul *ngIf="repositoriesList">
+  <li *ngFor="let repo of repositoriesList" (click)="addToDownloadList(repo)">
+    <button [disabled]="!repo.defaultBranch">{{repo.name}} - {{repo.defaultBranch}}</button>
+  </li>
+</ul>
+
+<br>
+<br>
+
+<ul *ngIf="cloneList">
+  <li *ngFor="let repo of cloneList">{{repo.name}} - {{repo.defaultBranch}}
+    <button (click)="delete(repo.path)">delete</button>
+  </li>
+</ul>
+<button (click)="clone()" [disabled]="form.invalid">Clone</button>
