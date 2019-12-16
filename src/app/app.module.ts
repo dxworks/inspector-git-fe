@@ -10,6 +10,7 @@ import {ProjectComponent} from './views/project/project.component';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import {GitlabIntegrationComponent} from './views/gitlab-integration/gitlab-integration.component';
 import {SpinnerInterceptor} from '../intercetors/spinner.interceptor';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {SpinnerInterceptor} from '../intercetors/spinner.interceptor';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

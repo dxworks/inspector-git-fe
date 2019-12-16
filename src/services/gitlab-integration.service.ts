@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ApiService} from './api.service';
 import {Observable} from 'rxjs';
-import {SimpleProjectDTO} from '../model/SimpleProjectDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +19,7 @@ export class GitlabIntegrationService {
   }
 
   deleteProject(path: any) {
-    return this.api.delete(`${this.gitlab}/delete`, {params: {path}});
+    return this.api.delete(`${this.gitlab}/deleteProject`, {params: {path}});
   }
 
   listProjects(credentials: any) {
@@ -28,7 +27,6 @@ export class GitlabIntegrationService {
   }
 
   importProjects(payload: { projects: any; credentials: any }) {
-    console.log(payload);
     return this.api.put(`${this.gitlab}/importProjects`, payload);
   }
 }

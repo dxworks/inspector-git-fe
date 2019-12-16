@@ -41,7 +41,7 @@
       <th class="text-center" scope="col">#</th>
       <th class="text-center" scope="col">Name</th>
       <th class="text-center" scope="col">Branch</th>
-      <th class="text-center" scope="col">CNP</th>
+      <th class="text-center" scope="col">Web url</th>
       <th class="text-center" scope="col">Actions</th>
     </tr>
     </thead>
@@ -50,7 +50,7 @@
       <th class="text-center align-middle" scope="row">{{i + 1}}</th>
       <td class="text-center align-middle">{{project.name}}</td>
       <td class="text-center align-middle">{{project.branch}}</td>
-      <td class="text-center align-middle">{{project.repositoryHttpUrl}}</td>
+      <td class="text-center align-middle">{{project.webUrl}}</td>
       <td class="text-center align-middle">
         <button class="btn text-danger mx-1" (click)="delete(project)"><i class="fas fa-trash-alt"></i></button>
       </td>

@@ -36,7 +36,7 @@ export class GitlabIntegrationComponent implements OnInit {
   }
 
   delete(project: any) {
-    this.integrationService.deleteProject(project.path).subscribe(console.log);
+    this.integrationService.deleteProject(project.path).subscribe(() => this.getProjects());
   }
 
   listProjects() {
@@ -60,6 +60,7 @@ export class GitlabIntegrationComponent implements OnInit {
         };
       })
     };
-    this.integrationService.importProjects(payload).subscribe(console.log);
+    this.downloadList = [];
+    this.integrationService.importProjects(payload).subscribe(() => this.getProjects());
   }
 }

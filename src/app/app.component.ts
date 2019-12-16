@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgxSpinnerService} from 'ngx-spinner';
-import {SpinnerInterceptor} from '../intercetors/spinner.interceptor';
+import {SpinnerService} from '../services/spinner.service';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +9,16 @@ import {SpinnerInterceptor} from '../intercetors/spinner.interceptor';
 })
 export class AppComponent implements OnInit {
   constructor(private spinner: NgxSpinnerService,
-              private spinnerInterceptor: SpinnerInterceptor) {
+              private spinnerService: SpinnerService) {
   }
 
   ngOnInit(): void {
-    console.log('sub');
-    this.spinnerInterceptor.spinner.subscribe(state => {
-      console.log(state);
-      if (state.on) {
+    this.spinnerService.spinner.subscribe(on => {
+      if (on) {
         this.spinner.show();
       } else {
         this.spinner.hide();
       }
-    });
+    }, console.log, console.log);
   }
 }

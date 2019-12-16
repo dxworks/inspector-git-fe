@@ -1,17 +1,53 @@
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {tap} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {SpinnerService} from '../services/spinner.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpinnerInterceptor implements HttpInterceptor {
-  spinner = new BehaviorSubject({on: false});
+  private requests: HttpRequest<any>[] = [];
+
+  constructor(private spinnerService: SpinnerService) {
+  }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this.spinner.next({on: true});
-    console.log('hello');
-    return next.handle(req).pipe(tap(() => this.spinner.next({on: false})));
+
+    this.requests.push(req);
+    console.log('No of requests--->' + this.requests.length);
+    this.spinnerService.setShow(true);
+    return new Observable(observer => {
+      const subscription = next.handle(req)
+        .subscribe(
+          event => {
+            if (event instanceof HttpResponse) {
+              this.removeRequest(req);
+              observer.next(event);
+            }
+          },
+          err => {
+            alert('error returned');
+            this.removeRequest(req);
+            observer.error(err);
+          },
+          () => {
+            this.removeRequest(req);
+            observer.complete();
+          });
+      // remove request from queue when cancelled
+      return () => {
+        this.removeRequest(req);
+        subscription.unsubscribe();
+      };
+    });
+  }
+
+  private removeRequest(req: HttpRequest<any>) {
+    const i = this.requests.indexOf(req);
+    if (i >= 0) {
+      this.requests.splice(i, 1);
+    }
+    this.spinnerService.setShow(this.requests.length > 0);
   }
 }

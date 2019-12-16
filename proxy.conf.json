@@ -1,0 +1,22 @@
+{
+  "/api": {
+    "target": "http://0.0.0.0:6061",
+    "host": "http://0.0.0.0:6061",
+    "logLevel": "info",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/proxy": ""
+    }
+  },
+  "/api/*": {
+    "target": "http://0.0.0.0:6061",
+    "host": "http://0.0.0.0:6061",
+    "logLevel": "info",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/proxy": ""
+    }
+  }
+}

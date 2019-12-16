@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 
 @Component({
@@ -6,19 +6,7 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
 
-  constructor() {
-  }
-
-  title = 'Inspector Git';
   selectedTab = 1;
-
-  setSelectedTab(tabIndex) {
-    this.selectedTab = tabIndex;
-  }
-
-
-  ngOnInit(): void {
-  }
 }
