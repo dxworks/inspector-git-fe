@@ -3,9 +3,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {SpinnerService} from '../services/spinner.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SpinnerInterceptor implements HttpInterceptor {
   private requests: HttpRequest<any>[] = [];
 
@@ -15,7 +13,6 @@ export class SpinnerInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     this.requests.push(req);
-    console.log('No of requests--->' + this.requests.length);
     this.spinnerService.setShow(true);
     return new Observable(observer => {
       const subscription = next.handle(req)

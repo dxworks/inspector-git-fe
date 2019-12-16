@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LayoutComponent} from './layout/layout.component';
-import {ProjectComponent} from './views/project/project.component';
 import {GitlabIntegrationComponent} from './views/gitlab-integration/gitlab-integration.component';
+import {SystemsComponent} from './views/systems/systems.component';
+import {IntegrationsComponent} from './views/integrations/integrations.component';
 
 
 const routes: Routes = [
@@ -11,13 +12,18 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'projects',
-        component: ProjectComponent,
+        path: 'systems',
+        component: SystemsComponent,
         children: []
       },
       {
         path: 'gitlab',
         component: GitlabIntegrationComponent,
+        children: []
+      },
+      {
+        path: 'integrations',
+        component: IntegrationsComponent,
         children: []
       },
       {
