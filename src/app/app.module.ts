@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {LayoutComponent} from './layout/layout.component';
 import {NgxSpinnerModule} from 'ngx-spinner';
@@ -12,8 +12,17 @@ import {SpinnerInterceptor} from '../interceptors/spinner.interceptor';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SystemComponent} from './views/system/system.components';
 import {SystemsComponent} from './views/systems/systems.component';
-import {MatButtonModule, MatExpansionModule, MatInputModule, MatListModule, MatTableModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatExpansionModule,
+  MatInputModule,
+  MatListModule,
+  MatStepperModule,
+  MatTableModule
+} from '@angular/material';
 import { IntegrationsComponent } from './views/integrations/integrations.component';
+import { NewSystemComponent } from './views/systems/new-system/new-system.component';
 
 @NgModule({
   declarations: [
@@ -22,21 +31,25 @@ import { IntegrationsComponent } from './views/integrations/integrations.compone
     GitlabIntegrationComponent,
     SystemComponent,
     SystemsComponent,
-    IntegrationsComponent
+    IntegrationsComponent,
+    NewSystemComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    NgxSpinnerModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatExpansionModule,
-    MatListModule,
-    MatInputModule,
-    MatTableModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        NgxSpinnerModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatExpansionModule,
+        MatListModule,
+        MatInputModule,
+        MatTableModule,
+        MatStepperModule,
+        MatCheckboxModule,
+        FormsModule
+    ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

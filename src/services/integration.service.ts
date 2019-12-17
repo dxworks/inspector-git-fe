@@ -20,7 +20,8 @@ export class IntegrationService {
     return this.api.delete(`${this.path}/deleteIntegration`, {params: {platform, name}});
   }
 
-  getIntegrations(platform: string) {
+  getIntegrations(platform?: string) {
+    platform = platform || '';
     return this.api.get(`${this.path}/${platform}`);
   }
 }

@@ -1,7 +1,8 @@
 export interface Project {
   name: string;
-  path: string;
   integrationName: string;
+  platform: string;
+  webUrl: string;
 }
 
 export interface System {

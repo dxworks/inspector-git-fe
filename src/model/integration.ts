@@ -1,7 +1,7 @@
 export class Integration {
   name: string;
-  username: string;
   platform: string;
+  username: string;
   url: string;
   password?: string;
 }

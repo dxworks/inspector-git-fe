@@ -1,5 +1,25 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.mat-checkbox-layout {
+  margin: 0 !important;
+
+  .mat-checkbox-inner-container {
+    width: 20px;
+    height: 20px;
+  }
+}
+
