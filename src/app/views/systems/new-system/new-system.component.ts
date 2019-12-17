@@ -23,7 +23,7 @@ export class NewSystemComponent implements OnInit {
   }
 
   integrationsTableColumns = ['name', 'platform', 'username', 'url', 'selected'];
-  projectsTableColumns = ['name', 'integrationName', 'platform', 'webUrl', 'selected'];
+  projectsTableColumns = ['imported', 'name', 'integrationName', 'webUrl', 'selected'];
 
   systemName = '';
   systemId = '';
@@ -95,7 +95,7 @@ export class NewSystemComponent implements OnInit {
     }
   }
 
-  import(stepper: MatHorizontalStepper) {
+  create(stepper: MatHorizontalStepper) {
     const system: System = {
       name: this.systemName,
       systemId: this.systemId,

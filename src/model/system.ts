@@ -3,6 +3,7 @@ export interface Project {
   integrationName: string;
   platform: string;
   webUrl: string;
+  imported: boolean;
 }
 
 export interface System {
