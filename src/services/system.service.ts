@@ -13,10 +13,18 @@ export class SystemService {
   }
 
   getSystems() {
-    return this.api.get(`${this.path}/getSystems`);
+    return this.api.get(this.path);
   }
 
   create(system: System) {
     return this.api.post(`${this.path}/create`, system);
+  }
+
+  delete(systemId: string) {
+    return this.api.delete(this.path, {params: {systemId}});
+  }
+
+  analyze(systemId: string) {
+    return this.api.get(`${this.path}/analyze`, {params: {systemId}});
   }
 }

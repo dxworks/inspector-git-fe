@@ -4,6 +4,7 @@ import {LayoutComponent} from './layout/layout.component';
 import {GitlabIntegrationComponent} from './views/gitlab-integration/gitlab-integration.component';
 import {SystemsComponent} from './views/systems/systems.component';
 import {IntegrationsComponent} from './views/integrations/integrations.component';
+import {ExploreComponent} from './views/explore/explore.component';
 
 
 const routes: Routes = [
@@ -27,8 +28,13 @@ const routes: Routes = [
         children: []
       },
       {
+        path: 'analyze/:id',
+        component: ExploreComponent,
+        children: []
+      },
+      {
         path: '**',
-        redirectTo: 'projects',
+        redirectTo: 'systems',
       }
     ]
   }

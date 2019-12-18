@@ -23,6 +23,7 @@ import {
 } from '@angular/material';
 import { IntegrationsComponent } from './views/integrations/integrations.component';
 import { NewSystemComponent } from './views/systems/new-system/new-system.component';
+import { ExploreComponent } from './views/explore/explore.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NewSystemComponent } from './views/systems/new-system/new-system.compon
     SystemComponent,
     SystemsComponent,
     IntegrationsComponent,
-    NewSystemComponent
+    NewSystemComponent,
+    ExploreComponent
   ],
     imports: [
         BrowserModule,

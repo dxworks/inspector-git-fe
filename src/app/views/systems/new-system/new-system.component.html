@@ -58,7 +58,8 @@
         <ng-container matColumnDef="imported">
           <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let project">
-            <i class="fas fa-{{project.imported ? 'hdd':'cloud'}} mat-accent"></i>
+            <button mat-button color="accent"><i class="fas fa-{{project.imported ? 'hdd':'cloud'}} mat-accent"></i>
+            </button>
           </td>
         </ng-container>
         <ng-container matColumnDef="name">
