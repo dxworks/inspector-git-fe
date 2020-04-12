@@ -24,6 +24,9 @@ import {
 import { IntegrationsComponent } from './views/integrations/integrations.component';
 import { NewSystemComponent } from './views/systems/new-system/new-system.component';
 import { ExploreComponent } from './views/explore/explore.component';
+import { LocalSystemsComponent } from './views/new-ig/local-systems/local-systems.component';
+import { AnalyzeComponent } from './views/new-ig/analyze/analyze.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -34,24 +37,27 @@ import { ExploreComponent } from './views/explore/explore.component';
     SystemsComponent,
     IntegrationsComponent,
     NewSystemComponent,
-    ExploreComponent
+    ExploreComponent,
+    LocalSystemsComponent,
+    AnalyzeComponent
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        NgxSpinnerModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatExpansionModule,
-        MatListModule,
-        MatInputModule,
-        MatTableModule,
-        MatStepperModule,
-        MatCheckboxModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatExpansionModule,
+    MatListModule,
+    MatInputModule,
+    MatTableModule,
+    MatStepperModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatTooltipModule
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

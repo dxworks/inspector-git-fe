@@ -5,6 +5,8 @@ import {GitlabIntegrationComponent} from './views/gitlab-integration/gitlab-inte
 import {SystemsComponent} from './views/systems/systems.component';
 import {IntegrationsComponent} from './views/integrations/integrations.component';
 import {ExploreComponent} from './views/explore/explore.component';
+import {LocalSystemsComponent} from "./views/new-ig/local-systems/local-systems.component";
+import {AnalyzeComponent} from "./views/new-ig/analyze/analyze.component";
 
 
 const routes: Routes = [
@@ -14,22 +16,22 @@ const routes: Routes = [
     children: [
       {
         path: 'systems',
-        component: SystemsComponent,
+        component: LocalSystemsComponent,
         children: []
       },
+      // {
+      //   path: 'gitlab',
+      //   component: GitlabIntegrationComponent,
+      //   children: []
+      // },
+      // {
+      //   path: 'integrations',
+      //   component: IntegrationsComponent,
+      //   children: []
+      // },
       {
-        path: 'gitlab',
-        component: GitlabIntegrationComponent,
-        children: []
-      },
-      {
-        path: 'integrations',
-        component: IntegrationsComponent,
-        children: []
-      },
-      {
-        path: 'analyze/:id',
-        component: ExploreComponent,
+        path: 'analyze',
+        component: AnalyzeComponent,
         children: []
       },
       {

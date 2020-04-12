@@ -11,3 +11,9 @@ export interface System {
   systemId: string;
   projects: Project[];
 }
+
+export interface LocalSystem {
+  name: string;
+  id: string;
+  sources: string[];
+}
