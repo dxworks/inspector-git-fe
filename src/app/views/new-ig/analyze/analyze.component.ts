@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AnalysisService} from '../../../../services/analysis.service';
 
 @Component({
   selector: 'ig-analyze',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./analyze.component.scss']
 })
 export class AnalyzeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private analysisService: AnalysisService) {
   }
 
+  ngOnInit() {
+    this.analysisService.getDetails().subscribe(console.log);
+  }
 }
