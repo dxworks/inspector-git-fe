@@ -21,12 +21,13 @@ import {
   MatStepperModule,
   MatTableModule
 } from '@angular/material';
-import { IntegrationsComponent } from './views/integrations/integrations.component';
-import { NewSystemComponent } from './views/systems/new-system/new-system.component';
-import { ExploreComponent } from './views/explore/explore.component';
-import { LocalSystemsComponent } from './views/new-ig/local-systems/local-systems.component';
-import { AnalyzeComponent } from './views/new-ig/analyze/analyze.component';
-import {MatTooltipModule} from "@angular/material/tooltip";
+import {IntegrationsComponent} from './views/integrations/integrations.component';
+import {NewSystemComponent} from './views/systems/new-system/new-system.component';
+import {ExploreComponent} from './views/explore/explore.component';
+import {LocalSystemsComponent} from './views/new-ig/local-systems/local-systems.component';
+import {AnalyzeComponent} from './views/new-ig/analyze/analyze.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MonacoEditorModule} from 'ngx-monaco-editor';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     MatStepperModule,
     MatCheckboxModule,
     FormsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MonacoEditorModule.forRoot()
   ],
   providers: [
     {
