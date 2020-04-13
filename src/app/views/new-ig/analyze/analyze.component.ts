@@ -36,6 +36,7 @@ export class AnalyzeComponent implements OnInit {
       this.log = response.log;
       this.files = response.results;
       this.displayText = response.log;
+      this.selectedFile = null;
     });
   }
 
