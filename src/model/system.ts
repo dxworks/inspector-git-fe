@@ -17,3 +17,13 @@ export interface LocalSystem {
   id: string;
   sources: string[];
 }
+
+export interface ScriptResponse {
+  log: string;
+  results: string[]
+}
+
+export interface ResultFile {
+  fileName: string;
+  content: string;
+}

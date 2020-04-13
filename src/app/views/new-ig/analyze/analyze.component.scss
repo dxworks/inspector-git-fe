@@ -1,0 +1,24 @@
+mat-checkbox {
+  float: right;
+
+  //::ng-deep .mat-checkbox-background {
+  //  background-color: rgb(48, 48, 48);
+  //}
+
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: black !important;
+  }
+}
+
+.right-align-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 10px;
+}
+
+.editor {
+  min-height: 200px;
+  max-height: 500px;
+  width: 100%;
+  overflow: auto;
+}
