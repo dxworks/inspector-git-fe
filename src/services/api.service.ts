@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 })
 export class ApiService {
 
-  private apiUrl = '/api';
+  private apiUrl = '/inspectorgit/api';
 
   constructor(private httpClient: HttpClient) {
   }

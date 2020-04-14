@@ -28,6 +28,7 @@ import {LocalSystemsComponent} from './views/new-ig/local-systems/local-systems.
 import {AnalyzeComponent} from './views/new-ig/analyze/analyze.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AceEditorModule} from 'ng2-ace-editor';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {AceEditorModule} from 'ng2-ace-editor';
       provide: HTTP_INTERCEPTORS,
       useClass: SpinnerInterceptor,
       multi: true
-    }
+    },
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

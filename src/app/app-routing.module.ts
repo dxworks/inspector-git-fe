@@ -1,12 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LayoutComponent} from './layout/layout.component';
-import {GitlabIntegrationComponent} from './views/gitlab-integration/gitlab-integration.component';
-import {SystemsComponent} from './views/systems/systems.component';
-import {IntegrationsComponent} from './views/integrations/integrations.component';
-import {ExploreComponent} from './views/explore/explore.component';
-import {LocalSystemsComponent} from "./views/new-ig/local-systems/local-systems.component";
-import {AnalyzeComponent} from "./views/new-ig/analyze/analyze.component";
+import {LocalSystemsComponent} from './views/new-ig/local-systems/local-systems.component';
+import {AnalyzeComponent} from './views/new-ig/analyze/analyze.component';
 
 
 const routes: Routes = [
