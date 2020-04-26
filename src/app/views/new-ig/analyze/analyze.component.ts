@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AnalysisService} from '../../../../services/analysis.service';
 import {LocalSystem} from '../../../../model/system';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ig-analyze',
@@ -24,11 +25,14 @@ export class AnalyzeComponent implements OnInit {
 
   selectedFile: string;
 
-  constructor(private analysisService: AnalysisService) {
+  constructor(private analysisService: AnalysisService,
+              private router: Router) {
   }
 
   ngOnInit() {
-    this.analysisService.getDetails().subscribe(description => this.systemDescription = description);
+    this.script = this.analysisService.getCachedScript()
+    this.analysisService.getDetails().subscribe(description => this.systemDescription = description,
+      () => this.router.navigateByUrl('/systems'));
   }
 
   runScript() {
@@ -54,5 +58,9 @@ export class AnalyzeComponent implements OnInit {
 
   openResultFile() {
     this.analysisService.openResultFile(this.systemDescription.id, this.selectedFile).subscribe();
+  }
+
+  cacheScript() {
+    this.analysisService.cacheScript(this.script);
   }
 }

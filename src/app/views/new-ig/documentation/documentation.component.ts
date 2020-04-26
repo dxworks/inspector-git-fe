@@ -8,7 +8,7 @@ import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 })
 export class DocumentationComponent implements OnInit {
   documentationUrl = 'http://localhost:6061/inspectorgit/documentation/index.html';
-  private urlSafe: SafeResourceUrl;
+  urlSafe: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
   }

@@ -1,4 +1,3 @@
-<h3>{{systemDescription?.name}}</h3>
 <mat-checkbox [(ngModel)]="themeLight">Light theme</mat-checkbox>
 
 <h5>Groovy script</h5>
@@ -9,6 +8,7 @@
      [options]="options"
      [readOnly]="false"
      [autoUpdateContent]="true"
+     (textChange)="cacheScript()"
      class="editor"></div>
 <div class="right-align-wrapper">
   <button mat-raised-button color="accent" (click)="runScript()">
@@ -16,12 +16,12 @@
   </button>
 </div>
 
-<div class="my-5">
-  <button mat-raised-button [color]="!selectedFile ? 'primary' : 'accent'" (click)="selectConsole()">
+<div class="my-2 response-buttons">
+  <button (click)="selectConsole()" [color]="!selectedFile ? 'primary' : 'accent'" class="my-2 mx-1" mat-raised-button>
     Console
   </button>
   <button mat-raised-button [color]="file == selectedFile ? 'primary' : 'accent'" *ngFor="let file of files"
-          (click)="selectResult(file)">
+          (click)="selectResult(file)" class="my-2 mx-1">
     {{file}}
   </button>
 </div>

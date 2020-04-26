@@ -29,7 +29,7 @@ import {AnalyzeComponent} from './views/new-ig/analyze/analyze.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AceEditorModule} from 'ng2-ace-editor';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
-import {DocumentationComponent} from './views/documentation/documentation.component';
+import {DocumentationComponent} from './views/new-ig/documentation/documentation.component';
 
 @NgModule({
   declarations: [

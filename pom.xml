@@ -102,23 +102,6 @@
                   <goal>exec</goal>
                 </goals>
               </execution>
-              <!--              <execution>-->
-              <!--                <id>exec-ng-build</id>-->
-              <!--                <phase>process-sources</phase>-->
-              <!--                <configuration>-->
-              <!--                  <executable>ng</executable>-->
-              <!--                  <arguments>-->
-              <!--                    <argument>build</argument>-->
-              <!--                    <argument>&#45;&#45;prod</argument>-->
-              <!--                    <argument>&#45;&#45;build-optimizer=false</argument>-->
-              <!--                    <argument>&#45;&#45;base-href</argument>-->
-              <!--                    <argument>/inspectorgit/</argument>-->
-              <!--                  </arguments>-->
-              <!--                </configuration>-->
-              <!--                <goals>-->
-              <!--                  <goal>exec</goal>-->
-              <!--                </goals>-->
-              <!--              </execution>-->
             </executions>
           </plugin>
         </plugins>

@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {LayoutComponent} from './layout/layout.component';
 import {LocalSystemsComponent} from './views/new-ig/local-systems/local-systems.component';
 import {AnalyzeComponent} from './views/new-ig/analyze/analyze.component';
-import {DocumentationComponent} from './views/documentation/documentation.component';
+import {DocumentationComponent} from './views/new-ig/documentation/documentation.component';
 
 
 const routes: Routes = [
