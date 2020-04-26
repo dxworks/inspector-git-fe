@@ -1,5 +1,5 @@
 {
-  "/api": {
+  "/inspectorgit/api": {
     "target": "http://0.0.0.0:6061",
     "host": "http://0.0.0.0:6061",
     "logLevel": "info",
@@ -9,7 +9,7 @@
       "^/proxy": ""
     }
   },
-  "/api/*": {
+  "/inspectorgit/api/*": {
     "target": "http://0.0.0.0:6061",
     "host": "http://0.0.0.0:6061",
     "logLevel": "info",

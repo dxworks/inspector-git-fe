@@ -5,3 +5,18 @@
 .create-info {
   color: red;
 }
+
+.mat-table {
+  .name-col {
+    width: 40%;
+  }
+
+  .id-col {
+    width: 30%;
+  }
+
+  .actions-col {
+    text-align: center;
+    width: 30%;
+  }
+}
