@@ -71,12 +71,12 @@
         <repository>
           <id>github</id>
           <name>GitHub dxworks Apache Maven Packages</name>
-          <url>https://maven.pkg.github.com/dxworks/inspector-git-frontend</url>
+          <url>https://maven.pkg.github.com/dxworks/inspector-git-fe</url>
         </repository>
         <snapshotRepository>
           <id>github</id>
           <name>GitHub dxworks Apache Maven Packages</name>
-          <url>https://maven.pkg.github.com/dxworks/inspector-git-frontend</url>
+          <url>https://maven.pkg.github.com/dxworks/inspector-git-fe</url>
         </snapshotRepository>
       </distributionManagement>
     </profile>
