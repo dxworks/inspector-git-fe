@@ -16,6 +16,8 @@ export interface LocalSystem {
   name: string;
   id: string;
   sources: string[];
+  issues: string[];
+  remotes: string[];
 }
 
 export interface ScriptResponse {

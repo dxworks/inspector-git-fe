@@ -31,7 +31,11 @@ export class AnalysisService {
 
   getDetails(): Observable<LocalSystem> {
     return this.api.get(`${this.url}/systemDetails`)
-      .pipe(tap(response => this.loadedSystemNameSubject.next((response as LocalSystem).name)));
+      .pipe(tap(response => {
+        if (response) {
+          this.loadedSystemNameSubject.next((response as LocalSystem).name);
+        }
+      }));
   }
 
   runScript(script: string): Observable<ScriptResponse> {

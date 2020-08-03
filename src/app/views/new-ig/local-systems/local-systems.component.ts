@@ -17,7 +17,9 @@ export class LocalSystemsComponent implements OnInit {
   newSystemForm = new FormGroup({
     id: new FormControl(null, [Validators.required]),
     name: new FormControl(null, [Validators.required]),
-    sources: new FormControl(null, [Validators.required])
+    sources: new FormControl(null, [Validators.required]),
+    issues: new FormControl(null, [Validators.required]),
+    remotes: new FormControl(null, [Validators.required])
   });
 
   constructor(private localSystemService: LocalSystemService,
@@ -63,7 +65,9 @@ export class LocalSystemsComponent implements OnInit {
     const localSystem: LocalSystem = {
       id: this.newSystemForm.get('id').value,
       name: this.newSystemForm.get('name').value,
-      sources: this.newSystemForm.get('sources').value.split('\n').filter(it => it.length > 0),
+      sources: this.getListFromMultiLineInput('sources'),
+      issues: this.getListFromMultiLineInput('issues'),
+      remotes: this.getListFromMultiLineInput('remotes'),
     };
     this.localSystemService.create(localSystem).subscribe(
       () => {
@@ -72,5 +76,9 @@ export class LocalSystemsComponent implements OnInit {
       },
       () => this.spinnerService.setShow(false)
     );
+  }
+
+  private getListFromMultiLineInput(controlName: string) {
+    return this.newSystemForm.get(controlName).value.split('\n').filter(it => it.length > 0);
   }
 }
