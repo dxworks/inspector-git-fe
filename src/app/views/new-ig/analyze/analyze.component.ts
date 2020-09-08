@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AnalysisService} from '../../../../services/analysis.service';
 import {LocalSystem} from '../../../../model/system';
 import {Router} from '@angular/router';
+import {AccountMergeService} from "../../../../services/account-merge.service";
 
 @Component({
   selector: 'ig-analyze',
@@ -26,11 +27,12 @@ export class AnalyzeComponent implements OnInit {
   selectedFile: string;
 
   constructor(private analysisService: AnalysisService,
+              private accountMergeService: AccountMergeService,
               private router: Router) {
   }
 
   ngOnInit() {
-    this.script = this.analysisService.getCachedScript()
+    this.script = this.analysisService.getCachedScript();
     this.analysisService.getDetails().subscribe(description => this.systemDescription = description,
       () => this.router.navigateByUrl('/systems'));
   }
@@ -62,5 +64,9 @@ export class AnalyzeComponent implements OnInit {
 
   cacheScript() {
     this.analysisService.cacheScript(this.script);
+  }
+
+  applyChronosMerges() {
+    this.accountMergeService.applyChronosMerges().subscribe();
   }
 }
