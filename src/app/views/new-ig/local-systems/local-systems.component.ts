@@ -79,6 +79,7 @@ export class LocalSystemsComponent implements OnInit {
   }
 
   private getListFromMultiLineInput(controlName: string) {
-    return this.newSystemForm.get(controlName).value.split('\n').filter(it => it.length > 0);
+    const value = this.newSystemForm.get(controlName).value;
+    return value === null ? [] : value.split('\n').filter(it => it.length > 0);
   }
 }
