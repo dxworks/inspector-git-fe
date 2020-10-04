@@ -18,8 +18,8 @@ export class LocalSystemsComponent implements OnInit {
     id: new FormControl(null, [Validators.required]),
     name: new FormControl(null, [Validators.required]),
     sources: new FormControl(null, [Validators.required]),
-    issues: new FormControl(null, [Validators.required]),
-    remotes: new FormControl(null, [Validators.required])
+    issues: new FormControl(null),
+    remotes: new FormControl(null)
   });
 
   constructor(private localSystemService: LocalSystemService,
