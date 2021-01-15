@@ -12,14 +12,15 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class LocalSystemsComponent implements OnInit {
   availableSystems: LocalSystem[] = [];
-  systemTableColumns = ['name', 'id', 'actions'];
+  systemTableColumns = ['name', 'id', 'options', 'actions'];
 
   newSystemForm = new FormGroup({
     id: new FormControl(null, [Validators.required]),
     name: new FormControl(null, [Validators.required]),
     sources: new FormControl(null, [Validators.required]),
     issues: new FormControl(null),
-    remotes: new FormControl(null)
+    remotes: new FormControl(null),
+    computeAnnotatedLines: new FormControl(true),
   });
 
   constructor(private localSystemService: LocalSystemService,
@@ -41,7 +42,7 @@ export class LocalSystemsComponent implements OnInit {
 
   analyze(system: LocalSystem) {
     this.spinnerService.setShow(true);
-    this.localSystemService.load(system.id).subscribe(() => {
+    this.localSystemService.load(system.id, system.computeAnnotatedLines).subscribe(() => {
         this.spinnerService.setShow(false);
         this.router.navigateByUrl('analyze');
       },
@@ -68,6 +69,7 @@ export class LocalSystemsComponent implements OnInit {
       sources: this.getListFromMultiLineInput('sources'),
       issues: this.getListFromMultiLineInput('issues'),
       remotes: this.getListFromMultiLineInput('remotes'),
+      computeAnnotatedLines: this.newSystemForm.get('computeAnnotatedLines').value
     };
     this.localSystemService.create(localSystem).subscribe(
       () => {

@@ -15,6 +15,7 @@
           <mat-label>Name</mat-label>
           <input matInput type="text" formControlName="name">
         </mat-form-field>
+        <mat-checkbox formControlName="computeAnnotatedLines">Compute annotated lines</mat-checkbox>
         <mat-form-field>
           <mat-label>Sources [paths to repos or iglog files on separate lines]</mat-label>
           <textarea matInput placeholder="put paths here on separate lines" formControlName="sources"></textarea>
@@ -46,6 +47,18 @@
     <ng-container matColumnDef="id">
       <th *matHeaderCellDef class="id-col" mat-header-cell>Id</th>
       <td *matCellDef="let system" class="id-col" mat-cell>{{system.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="options">
+      <th *matHeaderCellDef class="options-col" mat-header-cell>Options</th>
+      <td *matCellDef="let system" class="options-col" mat-cell>
+        <button (click)="system.computeAnnotatedLines = !system.computeAnnotatedLines" class="mx-1"
+                color="{{system.computeAnnotatedLines === false ? 'gray' : 'accent'}}"
+                mat-button
+                matTooltip="{{system.computeAnnotatedLines === false ? 'Don\'t compute annotated lines' : 'Compute annotated lines'}}">
+          <i class="far fa-list-alt"></i>
+        </button>
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">

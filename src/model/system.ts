@@ -18,6 +18,7 @@ export interface LocalSystem {
   sources: string[];
   issues: string[];
   remotes: string[];
+  computeAnnotatedLines: boolean;
 }
 
 export interface ScriptResponse {

@@ -17,8 +17,8 @@ export class LocalSystemService {
     return this.api.get(this.path);
   }
 
-  load(id: string): Observable<any> {
-    return this.api.get(`${this.path}/${id}`);
+  load(id: string, computeAnnotatedLines: boolean): Observable<any> {
+    return this.api.get(`${this.path}/${id}`, {params: {computeAnnotatedLines}});
   }
 
   delete(id: string): Observable<any> {
